@@ -2,15 +2,11 @@ name: Build Commands
 
 on:
   push:
-    branches:
-      - master
-    paths:
-      - 'minecraft_server_query/'
+    branches: [ master ]
+    paths: [ 'minecraft_server_query/**' ]
   pull_request:
-    branches:
-      - master
-    paths:
-      - 'minecraft_server_query/'
+    branches: [ master ]
+    paths: [ 'minecraft_server_query/**' ]
 
 jobs:
   build:
