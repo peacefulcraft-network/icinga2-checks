@@ -1,0 +1,31 @@
+name: Build Commands
+
+on:
+  push:
+    branches: [ master ]
+    paths: [ 'minecraft_server_query/' ]
+  pull_request:
+    branches: [ master ]
+    paths: [ 'minecraft_server_query/' ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: "Checkout Projects"
+      uses: actions/checkout@v2
+    
+    - name: "Setup PHP"
+      uses: shivammathur/setup-php@2.1.3
+
+    - name: "Install Build Dependencies"
+      run: composer install
+  
+    - name: "Install Build Target Dependencies"
+      run: composer install
+      working-directory: "./minecraft_server_query"
+    
+    - name: "Build Target"
+      run: ../vendor/bin/box compile --no-interaction
+      working-directory: "./minecraft_server_query"
