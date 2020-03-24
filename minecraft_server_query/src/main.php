@@ -4,6 +4,9 @@ require('../vendor/autoload.php');
 use xPaw\MinecraftPing;
 use xPaw\MinecraftPingException;
 
+/*
+  Print help information
+*/
 function help() {
   echo __FILE__ . " [hHpwc]" . PHP_EOL;
   echo " -H print this help message" . PHP_EOL;
