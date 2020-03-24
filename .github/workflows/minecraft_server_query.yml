@@ -30,8 +30,11 @@ jobs:
       run: composer build
       working-directory: "./minecraft_server_query"
 
+    - name: "Zip Build"
+      run: zip bin/minecraft_server_query.phar.zip bin/minecraft_server_query.phar
+
     - name: Push to CDN
       run: |
         eval "$(ssh-agent -s)"
         ssh-add - <<< "${{ secrets.CDN_INGRESS_KEY }}"
-        scp -o StrictHostKeyChecking=no -v -P "${{ secrets.CDN_INGRESS_PORT }}" -r bin/minecraft_server_query.phar "${{ secrets.CDN_INGRESS_USER }}"@"${{ secrets.CDN_INGRESS }}":"${{ secrets.CDN_PATH }}"
+        scp -o StrictHostKeyChecking=no -v -P "${{ secrets.CDN_INGRESS_PORT }}" -r bin/minecraft_server_query.phar.zip "${{ secrets.CDN_INGRESS_USER }}"@"${{ secrets.CDN_INGRESS }}":"${{ secrets.CDN_PATH }}"
