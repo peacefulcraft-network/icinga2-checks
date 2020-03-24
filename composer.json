@@ -1,0 +1,15 @@
+{
+    "name": "pcn/icinga2-checks",
+    "description": "A collection of icinga2 check commands written in PHP",
+    "type": "project",
+    "require-dev": {
+        "humbug/box": "^3.8"
+    },
+    "authors": [
+        {
+            "name": "parsonswy",
+            "email": "peacefulcraftnetwork@gmail.com"
+        }
+    ],
+    "require": {}
+}

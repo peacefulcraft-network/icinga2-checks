@@ -1,0 +1,13 @@
+{
+    "main": "src/main.php",
+    "output": "../bin/minecraft_server_query.phar",
+
+    "directories": ["src"],
+    "finder": [
+        {
+            "name": "*.php",
+            "exclude": ["test", "tests"],
+            "in": "vendor"
+         }
+    ]
+}
