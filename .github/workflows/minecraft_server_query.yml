@@ -29,3 +29,9 @@ jobs:
     - name: "Build Target"
       run: ../vendor/bin/box compile --no-interaction
       working-directory: "./minecraft_server_query"
+
+    - name: Push to CDN
+      run: |
+        eval "$(ssh-agent -s)"
+        ssh-add - <<< "${{ secrets.CDN_INGRESS_KEY }}"
+        scp -o StrictHostKeyChecking=no -v -P "${{ secrets.CDN_INGRESS_PORT }}" -r swordcraftonline_resource_pack.zip hash.sha1 "${{ secrets.CDN_INGRESS_USER }}"@"${{ secrets.CDN_INGRESS }}":"${{ secrets.CDN_PATH }}"
