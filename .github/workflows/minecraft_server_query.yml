@@ -1,4 +1,4 @@
-name: Build Commands
+name: Build Minecraft Server Query Command
 
 on:
   push:
@@ -34,4 +34,4 @@ jobs:
       run: |
         eval "$(ssh-agent -s)"
         ssh-add - <<< "${{ secrets.CDN_INGRESS_KEY }}"
-        scp -o StrictHostKeyChecking=no -v -P "${{ secrets.CDN_INGRESS_PORT }}" -r swordcraftonline_resource_pack.zip hash.sha1 "${{ secrets.CDN_INGRESS_USER }}"@"${{ secrets.CDN_INGRESS }}":"${{ secrets.CDN_PATH }}"
+        scp -o StrictHostKeyChecking=no -v -P "${{ secrets.CDN_INGRESS_PORT }}" -r bin/minecraft_server_query.phar "${{ secrets.CDN_INGRESS_USER }}"@"${{ secrets.CDN_INGRESS }}":"${{ secrets.CDN_PATH }}"
