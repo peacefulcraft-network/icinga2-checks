@@ -31,7 +31,8 @@ jobs:
       working-directory: "./minecraft_server_query"
 
     - name: "Zip Build"
-      run: zip bin/minecraft_server_query.phar.zip bin/minecraft_server_query.phar
+      run: zip minecraft_server_query.phar.zip minecraft_server_query.phar
+      working-directory: "/bin"
 
     - name: Push to CDN
       run: |
