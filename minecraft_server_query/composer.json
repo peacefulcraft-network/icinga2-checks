@@ -1,0 +1,14 @@
+{
+    "name": "pcn/minecraft_server_query",
+    "description": "An icinga2 health check for Minecraft servers",
+    "type": "project",
+    "require": {
+        "xpaw/php-minecraft-query": "^4.0"
+    },
+    "authors": [
+        {
+            "name": "parsonswy",
+            "email": "peacefulcraftnetwork@gmail.com"
+        }
+    ]
+}
