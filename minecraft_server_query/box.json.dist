@@ -9,5 +9,5 @@
             "name": "*.php",
             "in": "vendor"
          }
-    ],
+    ]
 }

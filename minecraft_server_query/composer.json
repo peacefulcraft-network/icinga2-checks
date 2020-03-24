@@ -10,5 +10,8 @@
             "name": "parsonswy",
             "email": "peacefulcraftnetwork@gmail.com"
         }
-    ]
+    ],
+    "scripts": {
+        "build": "../vendor/bin/box compile"
+    }
 }
