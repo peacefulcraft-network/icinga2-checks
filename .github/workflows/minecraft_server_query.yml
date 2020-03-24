@@ -27,7 +27,7 @@ jobs:
       working-directory: "./minecraft_server_query"
     
     - name: "Build Target"
-      run: ../vendor/bin/box compile --no-interaction
+      run: composer build
       working-directory: "./minecraft_server_query"
 
     - name: Push to CDN
