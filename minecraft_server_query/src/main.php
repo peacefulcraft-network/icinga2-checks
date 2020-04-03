@@ -87,5 +87,7 @@ if($res["players"]["online"] > $criticalThreshold) {
   $ret = "CRITICAL: " . $res["players"]["online"] . "/" . $res["players"]["max"] . " players online.";
 }
 
-echo $ret . PHP_EOL;
+$metrics = "|'players'=" . $res["players"]["online"] . ";" . $warningThreshold . ";" . $criticalThreshold . ";";
+
+echo $ret . $metrics . PHP_EOL;
 exit($exit);
