@@ -75,6 +75,11 @@ try {
   exit(2);
 }
 
+if (!isset($res["players"]) || !isset($res["players"]["online"]) || !isset($res["players"]["max"])) {
+  echo "Incomplete packet received from server. Server may be starting or in hung state." . PHP_EOL;
+  exit(3);
+}
+
 $exit = 0;
 $ret = "OK " . $res["players"]["online"] . "/" . $res["players"]["max"] . " players online.";
 if($res["players"]["online"] > $warningThreshold) {
